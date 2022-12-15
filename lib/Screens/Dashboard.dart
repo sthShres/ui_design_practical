@@ -25,6 +25,8 @@ class _DashboardPageState extends State<DashboardPage> {
       body: Container(
         child: Column(children: [
           Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
             children: [
               Container(
                 height: getSize(250, context),
@@ -36,23 +38,27 @@ class _DashboardPageState extends State<DashboardPage> {
                         image: AssetImage("assets/building.jpg"),
                         fit: BoxFit.fill)),
               ),
+              Positioned(
+                top: 170,
+                child: Container(
+                  height: getSize(130, context),
+                  width: getSize(130, context),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    border: Border.all(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      style: BorderStyle.solid,
+                      width: 5.0,
+                    ),
+                    image: DecorationImage(
+                      image: AssetImage("assets/user02.jpg"),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
-          Container(
-            height: getSize(130, context),
-            width: getSize(130, context),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100),
-              border: Border.all(
-                color: Color.fromARGB(255, 224, 224, 224),
-                style: BorderStyle.solid,
-                width: 6.0,
-              ),
-              image: DecorationImage(
-                image: AssetImage("assets/user02.jpg"),
-              ),
-            ),
-          ),
+          SizedBox(height: getSize(100, context)),
           Container(
             child: Center(
               child: Text(
@@ -73,7 +79,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   fontWeight: FontWeight.normal),
             ),
           ),
-          SizedBox(height: getSize(50, context)),
+          SizedBox(height: getSize(25, context)),
           Container(
               child: Row(
             children: [
@@ -90,7 +96,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 "Notifcations",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight: FontWeight.w300),
               ),
             ],
@@ -111,7 +117,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 "My orders",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight: FontWeight.w300),
               ),
               SizedBox(width: getSize(20, context)),
@@ -133,7 +139,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 "Account Settings",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight: FontWeight.w300),
               ),
             ],
@@ -154,7 +160,28 @@ class _DashboardPageState extends State<DashboardPage> {
                 "FAQ",
                 style: TextStyle(
                     color: Colors.black,
-                    fontSize: 25,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w300),
+              ),
+            ],
+          )),
+          Container(
+              child: Row(
+            children: [
+              IconButton(
+                icon: Icon(
+                  Icons.contact_mail_rounded,
+                  color: Colors.red,
+                  size: 30,
+                ),
+                onPressed: () => {},
+              ),
+              SizedBox(width: getSize(20, context)),
+              Text(
+                "Contact Us",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
                     fontWeight: FontWeight.w300),
               ),
             ],
